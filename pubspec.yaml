@@ -1,0 +1,26 @@
+name: project
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.0-315.0.dev
+
+dependencies:
+  flutter:
+    sdk: flutter
+  get:
+  firebase_core:
+  cloud_firestore:
+  image_picker:
+  mask_text_input_formatter:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+   - assets/images/
