@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:project/models/city.dart';
 import 'package:project/models/district.dart';
 import 'package:project/models/user.dart';
+import 'package:project/services/db_Service.dart';
 import 'package:project/services/storage_service.dart';
 
 class ActionService {
@@ -14,12 +15,14 @@ class ActionService {
   late CollectionReference activityResponse;
   late CollectionReference userResponse;
   late StorageService storage;
+  late DbService db;
 
   factory ActionService() {
     _instance.activityResponse =
         FirebaseFirestore.instance.collection('activities');
     _instance.userResponse = FirebaseFirestore.instance.collection('users');
     _instance.storage = StorageService();
+    _instance.db = DbService();
     return _instance;
   }
 
@@ -46,6 +49,7 @@ class ActionService {
       var loginUser = User.fromFirestore(userDoc);
       String userJson = jsonEncode(loginUser!.toJson());
       storage.WriteData('activityLoginInfo', userJson!);
+      db.loginUser = loginUser;
       return true;
     }
     return false;
@@ -99,7 +103,6 @@ class ActionService {
         await rootBundle.loadString('assets/jsons/cities.json');
     final data = await json.decode(response);
     List<City> cityList = (data as List).map((i) => City.fromJson(i)).toList();
-    print(cityList[0].name);
     return cityList;
   }
 
@@ -109,7 +112,6 @@ class ActionService {
     final data = await json.decode(response);
     List<District> districtList =
         (data as List).map((i) => District.fromJson(i)).toList();
-    print(districtList[0].name);
     return districtList;
   }
 }

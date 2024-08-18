@@ -3,6 +3,8 @@ import 'package:project/pages/LoginPage/login_binding.dart';
 import 'package:project/pages/LoginPage/login_view.dart';
 import 'package:project/pages/HomePage/home_binding.dart';
 import 'package:project/pages/HomePage/home_view.dart';
+import 'package:project/pages/activityListPage/activityList_binding.dart';
+import 'package:project/pages/activityListPage/activityList_view.dart';
 import 'package:project/pages/createPage/create_binding.dart';
 import 'package:project/pages/createPage/create_view.dart';
 import 'package:project/routes/routes.dart';
@@ -16,5 +18,9 @@ class Pages {
         page: () => CreateView(),
         binding: CreateBinding()),
     GetPage(name: Routes.home, page: () => HomeView(), binding: HomeBinding()),
+    GetPage(
+        name: Routes.activities,
+        page: () => ActivityListView(),
+        binding: ActivityListBinding()),
   ];
 }

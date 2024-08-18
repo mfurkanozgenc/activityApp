@@ -230,6 +230,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "leak_tracker",
       "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.5",
       "packageUri": "lib/",
@@ -416,7 +422,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-08-18T12:18:18.620934Z",
+  "generated": "2024-08-18T14:57:01.403351Z",
   "generator": "pub",
   "generatorVersion": "3.5.0-315.0.dev",
   "flutterRoot": "file:///C:/src/flutter",

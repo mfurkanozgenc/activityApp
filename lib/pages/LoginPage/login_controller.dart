@@ -30,7 +30,12 @@ class LoginController extends GetxController with BaseState {
           await services.action.login(userName.value.text, password.value.text);
       if (result) {
         clear();
-        Get.toNamed(Routes.home);
+        if (services.db.loginUser.userType == 0) {
+          // Etkinlik Oluşturucu 0 , etkinlik katılımcı 1
+          Get.toNamed(Routes.activities);
+        } else {
+          Get.toNamed(Routes.home);
+        }
       } else {
         services.alert
             .snackBarMessage(Get.context!, 'Hesap Bulunamadı', AlertType.error);
