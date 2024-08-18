@@ -62,10 +62,22 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/crypto-3.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/ffi-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "file_selector_linux",
@@ -144,6 +156,18 @@
       "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/get-4.6.6",
       "packageUri": "lib/",
       "languageVersion": "2.15"
+    },
+    {
+      "name": "hive",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/hive-2.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "hive_flutter",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/hive_flutter-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "http",
@@ -266,6 +290,48 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "path_provider",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_android-2.2.10",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "path_provider_foundation",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_foundation-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_linux-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_platform_interface-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/platform-3.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
       "name": "plugin_platform_interface",
       "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
       "packageUri": "lib/",
@@ -338,13 +404,19 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "xdg_directories",
+      "rootUri": "file:///C:/Users/Mustafa%20Furkan/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "project",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-08-17T16:48:58.703652Z",
+  "generated": "2024-08-18T09:29:39.808743Z",
   "generator": "pub",
   "generatorVersion": "3.5.0-315.0.dev",
   "flutterRoot": "file:///C:/src/flutter",

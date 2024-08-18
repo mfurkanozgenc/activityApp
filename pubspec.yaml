@@ -14,7 +14,9 @@ dependencies:
   cloud_firestore:
   image_picker:
   mask_text_input_formatter:
-
+  hive_flutter:
+  hive:
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

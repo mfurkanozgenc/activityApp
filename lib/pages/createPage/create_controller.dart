@@ -55,9 +55,20 @@ class CreateController extends GetxController with BaseState {
         services.alert.snackBarMessage(
             context, 'Kayıt Başarılı.Lütfen Giriş Yapın', AlertType.success);
         Get.toNamed(Routes.login);
+        clear();
       } else {
         services.alert.snackBarMessage(context, result, AlertType.error);
       }
     }
+  }
+
+  void clear() {
+    fullName.value.clear();
+    phoneNumber.value.clear();
+    identificationNumber.value.clear();
+    userName.value.clear();
+    password.value.clear();
+    selectedPhoto.value = '';
+    selectedPage.value = 0;
   }
 }

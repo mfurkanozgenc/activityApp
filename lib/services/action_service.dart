@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:project/models/user.dart';
+import 'package:project/services/storage_service.dart';
 
 class ActionService {
   static final _instance = ActionService._internal();
@@ -6,11 +10,13 @@ class ActionService {
 
   late CollectionReference activityResponse;
   late CollectionReference userResponse;
+  late StorageService storage;
 
   factory ActionService() {
     _instance.activityResponse =
         FirebaseFirestore.instance.collection('activities');
     _instance.userResponse = FirebaseFirestore.instance.collection('users');
+    _instance.storage = StorageService();
     return _instance;
   }
 
@@ -31,9 +37,12 @@ class ActionService {
         .where('userName', isEqualTo: userNameOrPhoneNumber)
         .where('password', isEqualTo: password)
         .get();
-    print(userNameControl.docs);
 
     if (userNameControl.docs.isNotEmpty) {
+      var userDoc = userNameControl.docs.first;
+      var loginUser = User.fromFirestore(userDoc);
+      String userJson = jsonEncode(loginUser!.toJson());
+      storage.WriteData('activityLoginInfo', userJson!);
       return true;
     }
     return false;
@@ -50,23 +59,18 @@ class ActionService {
     try {
       var controlIdentificationNumber = await userResponse
           .where('identificationNumber', isEqualTo: identificationNumber)
-          .where('userType', isNotEqualTo: type)
           .get();
       if (controlIdentificationNumber.docs.isNotEmpty) {
         return 'Aynı Kimilk Numarasına Ait Kayıt Bulunmaktadır';
       }
-      var controlPhoneNumber = await userResponse
-          .where('phoneNumber', isEqualTo: phoneNumber)
-          .where('userType', isNotEqualTo: type)
-          .get();
+      var controlPhoneNumber =
+          await userResponse.where('phoneNumber', isEqualTo: phoneNumber).get();
 
       if (controlPhoneNumber.docs.isNotEmpty) {
         return 'Aynı Telefon Numarasına Ait Kayıt Bulunmaktadır';
       }
-      var controlUserName = await userResponse
-          .where('userName', isEqualTo: userName)
-          .where('userType', isNotEqualTo: type)
-          .get();
+      var controlUserName =
+          await userResponse.where('userName', isEqualTo: userName).get();
       if (controlUserName.docs.isNotEmpty) {
         return 'Aynı Kullanıcı Adına Ait Kayıt Bulunmaktadır';
       }

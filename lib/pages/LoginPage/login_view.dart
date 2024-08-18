@@ -60,32 +60,50 @@ class LoginView extends GetView<LoginController> with BaseState {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Lütfen Şifrenizi Giriniz';
-                          }
-                        },
-                        controller: controller.password.value,
-                        decoration: InputDecoration(
-                            label: const Text('Şifre'),
-                            labelStyle: const TextStyle(color: Colors.black),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide:
-                                    const BorderSide(color: Colors.grey)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide(
-                                    color: constants.color.generalColor)),
-                            errorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide(
-                                    color: constants.color.errorColor)),
-                            focusedErrorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide(
-                                    color: constants.color.errorColor))),
+                      child: Obx(
+                        () => TextFormField(
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Lütfen Şifrenizi Giriniz';
+                            }
+                          },
+                          obscureText: controller.passwordVisibility.value,
+                          controller: controller.password.value,
+                          decoration: InputDecoration(
+                              label: const Text('Şifre'),
+                              suffixIcon: Padding(
+                                padding: const EdgeInsets.only(right: 20),
+                                child: IconButton(
+                                  icon: Icon(
+                                    controller.passwordVisibility.value
+                                        ? Icons.visibility_off
+                                        : Icons.visibility,
+                                    color: Colors.black,
+                                  ),
+                                  onPressed: () {
+                                    controller.passwordVisibility.value =
+                                        !controller.passwordVisibility.value;
+                                  },
+                                ),
+                              ),
+                              labelStyle: const TextStyle(color: Colors.black),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide:
+                                      const BorderSide(color: Colors.grey)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                      color: constants.color.generalColor)),
+                              errorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                      color: constants.color.errorColor)),
+                              focusedErrorBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide(
+                                      color: constants.color.errorColor))),
+                        ),
                       ),
                     ),
                     Padding(
