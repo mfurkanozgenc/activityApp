@@ -1,6 +1,9 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
+import 'package:project/models/city.dart';
+import 'package:project/models/district.dart';
 import 'package:project/models/user.dart';
 import 'package:project/services/storage_service.dart';
 
@@ -89,5 +92,24 @@ class ActionService {
       print('HATA : $e');
       return 'error';
     }
+  }
+
+  Future<List<City>> loadCities() async {
+    final String response =
+        await rootBundle.loadString('assets/jsons/cities.json');
+    final data = await json.decode(response);
+    List<City> cityList = (data as List).map((i) => City.fromJson(i)).toList();
+    print(cityList[0].name);
+    return cityList;
+  }
+
+  Future<List<District>> loadDisctricts() async {
+    final String response =
+        await rootBundle.loadString('assets/jsons/districts.json');
+    final data = await json.decode(response);
+    List<District> districtList =
+        (data as List).map((i) => District.fromJson(i)).toList();
+    print(districtList[0].name);
+    return districtList;
   }
 }
